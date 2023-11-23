@@ -1,36 +1,22 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="static/style.css">
-    
-    <title>Pi Video</title>
-    <script> 
-        document.addEventListener('DOMContentLoaded', function () {
-         var checkbox = document.querySelector('input[type="checkbox"]');
-         var img = document.getElementById("image");
 
-         checkbox.addEventListener('change', function () {
-          if (checkbox.checked) {
-              img.src="{{ url_for('video_gray') }}";
-            } else {
-              img.src="{{ url_for('video') }}";
-            }
-          });
-        });
-	</script>
-  </head>
-  <body>
+<head>
+  <link rel="stylesheet" href="static/style.css">
+
+  <title>Pi Video</title>
+
+</head>
+
+<body>
   <div class="container">
     <div class="row">
-        <div class="col-lg-8  offset-lg-2">
-            <h3 class="mt-5">Live Streaming</h3>
-            <img id="image" src="{{ url_for('video') }}" width="30%">
-            
-        </div>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
+      <div class="col-lg-8  offset-lg-2">
+        <h3 class="mt-5">Live Streaming</h3>
+        <img id="image" src="{{ url_for('video') }}" width="30%">
+        <img id="image" src="{{ url_for('video_edge') }}" width="30%">
+      </div>
     </div>
   </div>
-  </body>
+</body>
+
 </html>
